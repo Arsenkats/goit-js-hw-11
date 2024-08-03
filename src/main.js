@@ -51,6 +51,15 @@ refs.formSearch.addEventListener('submit', event => {
       formReset();
     })
     .catch(error => {
-      console.log(error);
+      hideLoader();
+      iziToast.error({
+          title: 'Error',
+          message:
+            `${error}`,
+          layout: 2,
+          position: 'topRight',
+          displayMode: 'once',
+      });
+     
     });
 });
